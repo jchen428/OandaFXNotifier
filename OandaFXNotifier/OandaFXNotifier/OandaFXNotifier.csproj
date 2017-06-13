@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8AC428B6-9577-44CD-A76D-14296DEC462B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OandaFXNotifier</RootNamespace>
+    <AssemblyName>OandaFXNotifier</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Credentials.cs" />
+    <Compile Include="Framework\Common.cs" />
+    <Compile Include="Framework\CustomEventArgs.cs" />
+    <Compile Include="Framework\ObservableObject.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rest.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Account.cs" />
+    <Compile Include="TradeLibrary\DataTypes\AccountDetails.cs" />
+    <Compile Include="TradeLibrary\DataTypes\CalendarEvent.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Candle.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\AccountResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\AccountsResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\AutochartistResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\CandlesResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\CommitmentsOfTradersResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\DeletePositionResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\DeleteTradeResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\HistoricalPositionRatioResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\InstrumentsResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\OrdersResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\PositionsResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\PostOrderResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\PricesResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\Requests\AccountRequest.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\Requests\CandlesRequest.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\Requests\OrderPostRequest.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\Requests\PricePollRequest.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\Requests\Request.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\Response.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\SessionResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\SpreadsResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\TradesResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Communications\TransactionsResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Event.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Heartbeat.cs" />
+    <Compile Include="TradeLibrary\DataTypes\IHeartbeat.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Instrument.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Order.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Position.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Price.cs" />
+    <Compile Include="TradeLibrary\DataTypes\RateStreamResponse.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Signal.cs" />
+    <Compile Include="TradeLibrary\DataTypes\TradeData.cs" />
+    <Compile Include="TradeLibrary\DataTypes\Transaction.cs" />
+    <Compile Include="TradeLibrary\EventsSession.cs" />
+    <Compile Include="TradeLibrary\RatesSession.cs" />
+    <Compile Include="TradeLibrary\StreamSession.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccessToken.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+</Project>
