@@ -34,30 +34,30 @@ namespace OandaFXNotifier.TradeLibrary
 		{
 			_shutdown = false;
 			_response = await getSession();
-			
 
-			Task.Run(() =>
-				{
-					DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T));
-					StreamReader reader = new StreamReader(_response.GetResponseStream());
-					while (!_shutdown)
-					{
-						MemoryStream memStream = new MemoryStream();
-						
-						string line = reader.ReadLine();
-						memStream.Write(Encoding.UTF8.GetBytes(line), 0, Encoding.UTF8.GetByteCount(line));
-						memStream.Position = 0;
 
-						var data = (T)serializer.ReadObject(memStream);
-						
-						// Don't send heartbeats
-						if (!data.isHeartbeat())
-						{
-							onDataReceived(data);
-						}
-					}
-				}
-				);
+            await Task.Run(() =>
+                 {
+                     DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T));
+                     StreamReader reader = new StreamReader(_response.GetResponseStream());
+                     while (!_shutdown)
+                     {
+                         MemoryStream memStream = new MemoryStream();
+
+                         string line = reader.ReadLine();
+                         memStream.Write(Encoding.UTF8.GetBytes(line), 0, Encoding.UTF8.GetByteCount(line));
+                         memStream.Position = 0;
+
+                         var data = (T)serializer.ReadObject(memStream);
+
+                        // Don't send heartbeats
+                        if (!data.isHeartbeat())
+                         {
+                             onDataReceived(data);
+                         }
+                     }
+                 }
+                );
 
 		}
 
