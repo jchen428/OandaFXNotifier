@@ -33,14 +33,15 @@
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.radioBid = new System.Windows.Forms.RadioButton();
             this.radioAsk = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
+            this.labelInvalid = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -49,16 +50,16 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelInfo, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(284, 161);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -67,7 +68,7 @@
             this.groupBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.groupBox.Controls.Add(this.radioBid);
             this.groupBox.Controls.Add(this.radioAsk);
-            this.groupBox.Location = new System.Drawing.Point(39, 20);
+            this.groupBox.Location = new System.Drawing.Point(39, 12);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(100, 71);
             this.groupBox.TabIndex = 0;
@@ -84,6 +85,7 @@
             this.radioBid.TabStop = true;
             this.radioBid.Text = "Bid";
             this.radioBid.UseVisualStyleBackColor = true;
+            this.radioBid.CheckedChanged += new System.EventHandler(this.radioCheckedChanged);
             // 
             // radioAsk
             // 
@@ -95,16 +97,18 @@
             this.radioAsk.TabStop = true;
             this.radioAsk.Text = "Ask";
             this.radioAsk.UseVisualStyleBackColor = true;
+            this.radioAsk.CheckedChanged += new System.EventHandler(this.radioCheckedChanged);
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel1.Controls.Add(this.textBoxPrice);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(145, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(127, 86);
-            this.panel1.TabIndex = 1;
+            this.panel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel.Controls.Add(this.labelInvalid);
+            this.panel.Controls.Add(this.textBoxPrice);
+            this.panel.Controls.Add(this.label1);
+            this.panel.Location = new System.Drawing.Point(145, 4);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(136, 88);
+            this.panel.TabIndex = 1;
             // 
             // textBoxPrice
             // 
@@ -126,9 +130,9 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.button, 2);
             this.button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button.Location = new System.Drawing.Point(3, 139);
+            this.button.Location = new System.Drawing.Point(3, 131);
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(278, 19);
+            this.button.Size = new System.Drawing.Size(278, 27);
             this.button.TabIndex = 2;
             this.button.Text = "Enable";
             this.button.UseVisualStyleBackColor = true;
@@ -139,12 +143,23 @@
             this.labelInfo.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.labelInfo, 2);
             this.labelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelInfo.Location = new System.Drawing.Point(3, 112);
+            this.labelInfo.Location = new System.Drawing.Point(3, 96);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(278, 24);
+            this.labelInfo.Size = new System.Drawing.Size(278, 32);
             this.labelInfo.TabIndex = 3;
-            this.labelInfo.Text = "Notifications are enabled.";
+            this.labelInfo.Text = "Notifications are disabled";
             this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelInvalid
+            // 
+            this.labelInvalid.AutoSize = true;
+            this.labelInvalid.ForeColor = System.Drawing.Color.Red;
+            this.labelInvalid.Location = new System.Drawing.Point(7, 64);
+            this.labelInvalid.Name = "labelInvalid";
+            this.labelInvalid.Size = new System.Drawing.Size(123, 13);
+            this.labelInvalid.TabIndex = 2;
+            this.labelInvalid.Text = "Must be a numeric value";
+            this.labelInvalid.Visible = false;
             // 
             // Form1
             // 
@@ -159,8 +174,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -171,11 +186,12 @@
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.RadioButton radioBid;
         private System.Windows.Forms.RadioButton radioAsk;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label labelInvalid;
     }
 }
 

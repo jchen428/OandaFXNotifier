@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StreamRates.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +85,12 @@
   <ItemGroup>
     <Content Include="Icon.ico" />
     <Content Include="Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OandaFXNotifier\OandaFXNotifier\OandaFXNotifier.csproj">
+      <Project>{8ac428b6-9577-44cd-a76d-14296dec462b}</Project>
+      <Name>OandaFXNotifier</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
