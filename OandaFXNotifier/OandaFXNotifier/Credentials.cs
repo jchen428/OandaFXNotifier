@@ -97,10 +97,10 @@ namespace OandaRest
 
 		private static Credentials getPracticeCredentials()
 		{
-		    var assembly = typeof(Credentials).GetTypeInfo().Assembly;
+		    Assembly assembly = typeof(Credentials).GetTypeInfo().Assembly;
 		    Stream stream = assembly.GetManifestResourceStream("OandaRest.AccessToken.txt");
 		    string text = "";
-		    using (var reader = new StreamReader(stream))
+		    using (StreamReader reader = new StreamReader(stream))
 		    {
 		        text = reader.ReadToEnd();
 		    }
