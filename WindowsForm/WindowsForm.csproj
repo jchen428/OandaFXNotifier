@@ -87,9 +87,9 @@
     <Content Include="Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OandaFXNotifier\OandaFXNotifier\OandaFXNotifier.csproj">
+    <ProjectReference Include="..\OandaFXNotifier\OandaFXNotifier\OandaRest.csproj">
       <Project>{8ac428b6-9577-44cd-a76d-14296dec462b}</Project>
-      <Name>OandaFXNotifier</Name>
+      <Name>OandaRest</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Timers;
-using OandaFXNotifier;
-using OandaFXNotifier.TradeLibrary;
-using OandaFXNotifier.TradeLibrary.DataTypes;
+using OandaRest;
+using OandaRest.TradeLibrary;
+using OandaRest.TradeLibrary.DataTypes;
 
 namespace Test
 {
@@ -18,19 +18,19 @@ namespace Test
             Credentials creds = Credentials.getDefaultCredentials();
             Console.WriteLine(creds.accessToken);
 
-            List<Account> accounts = Rest.getAccountListAsync().Result;
+            /*List<Account> accounts = Rest.getAccountListAsync().Result;
             foreach (var account in accounts)
             {
                 Console.WriteLine(account.accountId);
-            }
+            }*/
 
             List<Instrument> instruments = Rest.getInstrumentsAsync(creds.defaultAccountId).Result;
 
-            List<Price> rates = Rest.getRatesAsync(instruments).Result;
+            /*List<Price> rates = Rest.getRatesAsync(instruments).Result;
             foreach (var rate in rates)
             {
                 Console.WriteLine(rate.instrument + "\n" + rate.bid + "\n" + rate.ask + "\n");
-            }
+            }*/
 
             _session = new RatesSession(creds.defaultAccountId, instruments);
             _session.dataReceived += sessionOnDataReceived;

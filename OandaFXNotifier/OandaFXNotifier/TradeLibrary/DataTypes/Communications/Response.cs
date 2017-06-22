@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using System.Text;
-using OandaFXNotifier.Framework;
+using OandaRest.Framework;
 
-namespace OandaFXNotifier.TradeLibrary.DataTypes.Communications
+namespace OandaRest.TradeLibrary.DataTypes.Communications
 {
 	public class Response
 	{

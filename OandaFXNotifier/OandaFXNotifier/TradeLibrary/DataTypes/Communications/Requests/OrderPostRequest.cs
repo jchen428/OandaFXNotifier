@@ -1,4 +1,4 @@
-﻿namespace OandaFXNotifier.TradeLibrary.DataTypes.Communications.Requests
+﻿namespace OandaRest.TradeLibrary.DataTypes.Communications.Requests
 {
 	public class OrderPostRequest
 	{

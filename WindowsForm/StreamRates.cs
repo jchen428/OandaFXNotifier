@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OandaFXNotifier;
-using OandaFXNotifier.TradeLibrary;
-using OandaFXNotifier.TradeLibrary.DataTypes;
+using OandaRest;
+using OandaRest.TradeLibrary;
+using OandaRest.TradeLibrary.DataTypes;
 
 namespace WindowsForm
 {

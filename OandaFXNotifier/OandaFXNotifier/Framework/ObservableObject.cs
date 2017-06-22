@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace OandaFXNotifier.Framework
+namespace OandaRest.Framework
 {
     /// <summary>
     /// This is the abstract base class for any object that provides property change notifications.  

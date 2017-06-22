@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace OandaFXNotifier
+namespace OandaRest
 {
 	public enum EServer
 	{
@@ -98,7 +98,7 @@ namespace OandaFXNotifier
 		private static Credentials getPracticeCredentials()
 		{
 		    var assembly = typeof(Credentials).GetTypeInfo().Assembly;
-		    Stream stream = assembly.GetManifestResourceStream("OandaFXNotifier.AccessToken.txt");
+		    Stream stream = assembly.GetManifestResourceStream("OandaRest.AccessToken.txt");
 		    string text = "";
 		    using (var reader = new StreamReader(stream))
 		    {

@@ -1,4 +1,4 @@
-﻿namespace OandaFXNotifier.TradeLibrary.DataTypes.Communications
+﻿namespace OandaRest.TradeLibrary.DataTypes.Communications
 {
 	public class DeleteTradeResponse : Response
 	{

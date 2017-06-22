@@ -3,9 +3,9 @@ using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-using OandaFXNotifier.TradeLibrary.DataTypes;
+using OandaRest.TradeLibrary.DataTypes;
 
-namespace OandaFXNotifier.TradeLibrary
+namespace OandaRest.TradeLibrary
 {
 	public abstract class StreamSession<T> where T: IHeartbeat
 	{

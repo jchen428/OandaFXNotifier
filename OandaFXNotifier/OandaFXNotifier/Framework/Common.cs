@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace OandaFXNotifier.Framework
+namespace OandaRest.Framework
 {
 	public class Common
 	{

@@ -1,6 +1,6 @@
-﻿using OandaFXNotifier.TradeLibrary.DataTypes.Communications;
+﻿using OandaRest.TradeLibrary.DataTypes.Communications;
 
-namespace OandaFXNotifier.TradeLibrary.DataTypes
+namespace OandaRest.TradeLibrary.DataTypes
 {
     public class TradeData : Response
     {

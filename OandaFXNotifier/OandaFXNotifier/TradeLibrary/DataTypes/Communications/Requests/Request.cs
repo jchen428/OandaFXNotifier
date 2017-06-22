@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Text;
 
-namespace OandaFXNotifier.TradeLibrary.DataTypes.Communications.Requests
+namespace OandaRest.TradeLibrary.DataTypes.Communications.Requests
 {
 	public interface ISmartProperty
 	{

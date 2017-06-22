@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OandaFXNotifier.TradeLibrary.DataTypes.Communications
+namespace OandaRest.TradeLibrary.DataTypes.Communications
 {
     public class PositionsResponse
     {

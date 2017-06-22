@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OandaFXNotifier.TradeLibrary.DataTypes
+namespace OandaRest.TradeLibrary.DataTypes
 {
 	public class IsOptionalAttribute : Attribute
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OandaFXNotifier.TradeLibrary.DataTypes
+namespace OandaRest.TradeLibrary.DataTypes
 {
 	public class Signal
 	{

@@ -1,4 +1,4 @@
-﻿namespace OandaFXNotifier.Framework
+﻿namespace OandaRest.Framework
 {
     public class CustomEventArgs<T>
     {

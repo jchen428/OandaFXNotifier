@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.IO.Compression;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-using OandaFXNotifier.TradeLibrary.DataTypes;
-using OandaFXNotifier.TradeLibrary.DataTypes.Communications;
-using OandaFXNotifier.TradeLibrary.DataTypes.Communications.Requests;
-using System.Runtime.Serialization.Json;
-using System.Net;
-using System.IO;
+using OandaRest.TradeLibrary.DataTypes;
+using OandaRest.TradeLibrary.DataTypes.Communications;
+using OandaRest.TradeLibrary.DataTypes.Communications.Requests;
+
 //using System.Web.Helpers;
 
 
-namespace OandaFXNotifier
+namespace OandaRest
 {
     /// Best Practices Notes
     /// 
